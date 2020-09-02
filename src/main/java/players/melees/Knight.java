@@ -11,7 +11,9 @@ public class Knight extends Melee {
 
 
     public void swearOath() {
-        addHealth(5);
-        addStrength(10);
+        if (this.getHealth() <= 10) {
+            addHealth(5);
+            addStrength(10);
+        }
     }
 }
