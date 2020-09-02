@@ -25,4 +25,9 @@ public abstract class Player {
     public void addTreasure(Treasure treasure) {
         this.treasures.add(treasure);
     }
+
+    public Treasure removeTreasure(Treasure treasure) {
+        int index = this.treasures.indexOf(treasure);
+        return this.treasures.remove(index);
+    }
 }
