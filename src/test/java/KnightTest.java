@@ -68,4 +68,10 @@ public class KnightTest {
         assertEquals(110, knight.getHealth());
     }
 
+    @Test
+    public void canRemoveHealth() {
+        knight.removeHealth(10);
+        assertEquals(90, knight.getHealth());
+    }
+
 }

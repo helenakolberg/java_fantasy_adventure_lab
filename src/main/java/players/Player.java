@@ -31,7 +31,11 @@ public abstract class Player {
         return this.treasures.remove(index);
     }
 
-    public void addHealth(int health) {
-        this.health += health;
+    public void addHealth(int amount) {
+        this.health += amount;
+    }
+
+    public void removeHealth(int amount) {
+        this.health -= amount;
     }
 }
