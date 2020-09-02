@@ -44,4 +44,8 @@ public abstract class Melee extends Player {
         Weapon newWeapon = removeWeapon(weapon);
         this.equippedWeapon = newWeapon;
     }
+
+    public void addStrength(int amount) {
+        this.strength += amount;
+    }
 }

@@ -1,7 +1,6 @@
 package players.healers;
 
 import components.HealingTool;
-import components.Weapon;
 import players.Player;
 
 import java.util.ArrayList;

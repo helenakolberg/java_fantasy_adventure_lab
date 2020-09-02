@@ -92,4 +92,18 @@ public class KnightTest {
         assertEquals(weapon2, knight.getEquippedWeapon());
         assertEquals(1, knight.getWeaponCount());
     }
+
+    @Test
+    public void canSwearOath() {
+        knight.removeHealth(90);
+        knight.swearOath();
+        assertEquals(15, knight.getHealth());
+        assertEquals(17, knight.getStrength());
+    }
+
+    @Test
+    public void addStrength() {
+        knight.addStrength(5);
+        assertEquals(12, knight.getStrength());
+    }
 }
