@@ -10,11 +10,13 @@ import static org.junit.Assert.assertEquals;
 public class DwarfTest {
     Dwarf dwarf;
     Weapon weapon;
+    Weapon weapon2;
     Treasure treasure;
 
     @Before
     public void before() {
         weapon = new Weapon("Axe", 5);
+        weapon2 = new Weapon("Mace", 4);
         dwarf = new Dwarf(100, 7, weapon);
         treasure = new Treasure("Ruby", TreasureValue.RARE);
     }
@@ -67,5 +69,26 @@ public class DwarfTest {
     public void canRemoveHealth() {
         dwarf.removeHealth(10);
         assertEquals(90, dwarf.getHealth());
+    }
+
+    @Test
+    public void canAddWeapon() {
+        dwarf.addWeapon(weapon2);
+        assertEquals(1, dwarf.getWeaponCount());
+    }
+
+    @Test
+    public void canRemoveWeapon() {
+        dwarf.addWeapon(weapon2);
+        dwarf.removeWeapon(weapon2);
+        assertEquals(0, dwarf.getWeaponCount());
+    }
+
+    @Test
+    public void canChangeEquippedWeapon() {
+        dwarf.addWeapon(weapon2);
+        dwarf.changeEquippedWeapon(weapon2);
+        assertEquals(weapon2, dwarf.getEquippedWeapon());
+        assertEquals(1, dwarf.getWeaponCount());
     }
 }
