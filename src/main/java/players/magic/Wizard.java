@@ -1,7 +1,6 @@
 package players.magic;
 
 import components.Companion;
-import players.melees.Melee;
 
 public class Wizard extends Magic {
 

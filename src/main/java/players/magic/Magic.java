@@ -16,6 +16,7 @@ public abstract class Magic extends Player {
         super(health);
         this.intellect = intellect;
         this.companion = companion;
+        this.spells = new ArrayList<Spell>();
     }
 
     public int getIntellect() {
@@ -28,5 +29,14 @@ public abstract class Magic extends Player {
 
     public int getSpellCount() {
         return this.spells.size();
+    }
+
+    public void addSpell(Spell spell) {
+        this.spells.add(spell);
+    }
+
+    public Spell removeSpell(Spell spell) {
+        int index = this.spells.indexOf(spell);
+        return this.spells.remove(index);
     }
 }
