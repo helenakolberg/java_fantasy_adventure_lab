@@ -3,71 +3,69 @@ import components.TreasureValue;
 import components.Weapon;
 import org.junit.Before;
 import org.junit.Test;
-import players.melees.Knight;
+import players.melees.Dwarf;
 
 import static org.junit.Assert.assertEquals;
 
-public class KnightTest {
-
-    Knight knight;
+public class DwarfTest {
+    Dwarf dwarf;
     Weapon weapon;
     Treasure treasure;
 
     @Before
     public void before() {
-        weapon = new Weapon("Sword", 5);
-        knight = new Knight(100, 7, weapon);
+        weapon = new Weapon("Axe", 5);
+        dwarf = new Dwarf(100, 7, weapon);
         treasure = new Treasure("Ruby", TreasureValue.RARE);
     }
 
     @Test
     public void canGetHealth() {
-        assertEquals(100, knight.getHealth());
+        assertEquals(100, dwarf.getHealth());
     }
 
     @Test
     public void canGetStrength() {
-        assertEquals(7, knight.getStrength());
+        assertEquals(7, dwarf.getStrength());
     }
 
     @Test
     public void canGetEquippedWeapon() {
-        assertEquals(weapon, knight.getEquippedWeapon());
+        assertEquals(weapon, dwarf.getEquippedWeapon());
     }
 
     @Test
     public void canGetWeaponCount() {
-        assertEquals(0, knight.getWeaponCount());
+        assertEquals(0, dwarf.getWeaponCount());
     }
 
     @Test
     public void canGetTreasureCount() {
-        assertEquals(0, knight.getTreasureCount());
+        assertEquals(0, dwarf.getTreasureCount());
     }
 
     @Test
     public void canAddTreasure() {
-        knight.addTreasure(treasure);
-        assertEquals(1, knight.getTreasureCount());
+        dwarf.addTreasure(treasure);
+        assertEquals(1, dwarf.getTreasureCount());
     }
 
     @Test
     public void canRemoveTreasure() {
-        knight.addTreasure(treasure);
-        knight.removeTreasure(treasure);
-        assertEquals(0, knight.getTreasureCount());
+        dwarf.addTreasure(treasure);
+        dwarf.removeTreasure(treasure);
+        assertEquals(0, dwarf.getTreasureCount());
     }
 
     @Test
     public void canAddHealth() {
-        knight.addHealth(10);
-        assertEquals(110, knight.getHealth());
+        dwarf.addHealth(10);
+        assertEquals(110, dwarf.getHealth());
     }
 
     @Test
     public void canRemoveHealth() {
-        knight.removeHealth(10);
-        assertEquals(90, knight.getHealth());
+        dwarf.removeHealth(10);
+        assertEquals(90, dwarf.getHealth());
     }
-
 }
