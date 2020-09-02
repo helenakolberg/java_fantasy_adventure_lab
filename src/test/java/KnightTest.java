@@ -1,4 +1,5 @@
 import components.Treasure;
+import components.TreasureValue;
 import components.Weapon;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +13,7 @@ public class KnightTest {
 
     Knight knight;
     Weapon weapon;
+    Treasure treasure;
     ArrayList<Weapon> weapons;
     ArrayList<Treasure> treasures;
 
@@ -19,6 +21,7 @@ public class KnightTest {
     public void before() {
         weapon = new Weapon("Sword", 5);
         knight = new Knight(100, 7, weapon);
+        treasure = new Treasure("Ruby", TreasureValue.RARE);
     }
 
     @Test
@@ -45,4 +48,11 @@ public class KnightTest {
     public void canGetTreasureCount() {
         assertEquals(0, knight.getTreasureCount());
     }
+
+    @Test
+    public void canAddTreasure() {
+        knight.addTreasure(treasure);
+        assertEquals(1, knight.getTreasureCount());
+    }
+
 }
