@@ -23,7 +23,7 @@ public class TreasureRoomTest {
     }
 
     @Test
-    public void getName() {
+    public void canGetName() {
         assertEquals("Chamber of Gold", treasureRoom.getName());
     }
 
@@ -33,7 +33,7 @@ public class TreasureRoomTest {
     }
 
     @Test
-    public void getPlayerCount() {
+    public void canGetPlayerCount() {
         assertEquals(0, treasureRoom.getPlayerCount());
     }
 }
