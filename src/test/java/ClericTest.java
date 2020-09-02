@@ -52,4 +52,16 @@ public class ClericTest {
         cleric.removeTreasure(treasure);
         assertEquals(0, cleric.getTreasureCount());
     }
+
+    @Test
+    public void canAddHealth() {
+        cleric.addHealth(10);
+        assertEquals(90, cleric.getHealth());
+    }
+
+    @Test
+    public void canRemoveHealth() {
+        cleric.removeHealth(10);
+        assertEquals(70, cleric.getHealth());
+    }
 }
