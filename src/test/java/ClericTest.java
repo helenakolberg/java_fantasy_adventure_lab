@@ -1,4 +1,6 @@
 import components.HealingTool;
+import components.Treasure;
+import components.TreasureValue;
 import org.junit.Before;
 import org.junit.Test;
 import players.healers.Cleric;
@@ -9,11 +11,13 @@ public class ClericTest {
 
     Cleric cleric;
     HealingTool tool;
+    Treasure treasure;
 
     @Before
     public void before() {
         tool = new HealingTool("Health potion", 10);
         cleric = new Cleric(80, tool);
+        treasure = new Treasure("Ruby", TreasureValue.RARE);
     }
 
     @Test
@@ -29,5 +33,23 @@ public class ClericTest {
     @Test
     public void canGetToolCount() {
         assertEquals(0, cleric.getToolCount());
+    }
+
+    @Test
+    public void canGetTreasureCount() {
+        assertEquals(0, cleric.getTreasureCount());
+    }
+
+    @Test
+    public void canAddTreasure() {
+        cleric.addTreasure(treasure);
+        assertEquals(1, cleric.getTreasureCount());
+    }
+
+    @Test
+    public void canRemoveTreasure() {
+        cleric.addTreasure(treasure);
+        cleric.removeTreasure(treasure);
+        assertEquals(0, cleric.getTreasureCount());
     }
 }
