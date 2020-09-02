@@ -29,4 +29,8 @@ public abstract class Melee extends Player {
     public int getStrength() {
         return strength;
     }
+
+    public void addWeapon(Weapon weapon) {
+        this.weapons.add(weapon);
+    }
 }

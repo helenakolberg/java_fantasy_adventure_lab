@@ -11,11 +11,13 @@ public class KnightTest {
 
     Knight knight;
     Weapon weapon;
+    Weapon weapon2;
     Treasure treasure;
 
     @Before
     public void before() {
         weapon = new Weapon("Sword", 5);
+        weapon2 = new Weapon("Mace", 4);
         knight = new Knight(100, 7, weapon);
         treasure = new Treasure("Ruby", TreasureValue.RARE);
     }
@@ -68,6 +70,12 @@ public class KnightTest {
     public void canRemoveHealth() {
         knight.removeHealth(10);
         assertEquals(90, knight.getHealth());
+    }
+
+    @Test
+    public void canAddWeapon() {
+        knight.addWeapon(weapon2);
+        assertEquals(1, knight.getWeaponCount());
     }
 
 }
