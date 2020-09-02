@@ -21,4 +21,13 @@ public abstract class Room {
     public int getPlayerCount() {
         return this.players.size();
     }
+
+    public void addPlayer(Player player) {
+        this.players.add(player);
+    }
+
+    public Player removePlayer(Player player) {
+        int index = this.players.indexOf(player);
+        return this.players.remove((index));
+    }
 }
