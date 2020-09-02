@@ -1,6 +1,7 @@
 package players.healers;
 
 import components.HealingTool;
+import components.Weapon;
 import players.Player;
 
 import java.util.ArrayList;
@@ -22,5 +23,20 @@ public abstract class Healer extends Player {
 
     public int getToolCount() {
         return this.tools.size();
+    }
+
+    public void addTool(HealingTool tool) {
+        this.tools.add(tool);
+    }
+
+    public HealingTool removeTool(HealingTool tool) {
+        int index = this.tools.indexOf(tool);
+        return this.tools.remove(index);
+    }
+
+    public void changeEquippedTool(HealingTool tool) {
+        addTool(this.equippedTool);
+        HealingTool newTool = removeTool(tool);
+        this.equippedTool = newTool;
     }
 }

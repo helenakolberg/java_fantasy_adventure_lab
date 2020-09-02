@@ -11,11 +11,13 @@ public class ClericTest {
 
     Cleric cleric;
     HealingTool tool;
+    HealingTool tool2;
     Treasure treasure;
 
     @Before
     public void before() {
         tool = new HealingTool("Health potion", 10);
+        tool2 = new HealingTool("Reviving balm", 5);
         cleric = new Cleric(80, tool);
         treasure = new Treasure("Ruby", TreasureValue.RARE);
     }
@@ -63,5 +65,26 @@ public class ClericTest {
     public void canRemoveHealth() {
         cleric.removeHealth(10);
         assertEquals(70, cleric.getHealth());
+    }
+
+    @Test
+    public void canAddTool() {
+        cleric.addTool(tool2);
+        assertEquals(1, cleric.getToolCount());
+    }
+
+    @Test
+    public void canRemoveTool() {
+        cleric.addTool(tool2);
+        cleric.removeTool(tool2);
+        assertEquals(0, cleric.getToolCount());
+    }
+
+    @Test
+    public void canChangeEquippedTool() {
+        cleric.addTool(tool2);
+        cleric.changeEquippedTool(tool2);
+        assertEquals(tool2, cleric.getEquippedTool());
+        assertEquals(1, cleric.getToolCount());
     }
 }
