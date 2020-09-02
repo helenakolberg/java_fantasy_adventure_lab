@@ -78,4 +78,11 @@ public class KnightTest {
         assertEquals(1, knight.getWeaponCount());
     }
 
+    @Test
+    public void canRemoveWeapon() {
+        knight.addWeapon(weapon2);
+        knight.removeWeapon(weapon2);
+        assertEquals(0, knight.getWeaponCount());
+    }
+
 }
