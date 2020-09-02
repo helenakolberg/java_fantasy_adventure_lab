@@ -31,4 +31,9 @@ public class TreasureRoomTest {
     public void canGetTreasures() {
         assertEquals(treasures, treasureRoom.getTreasures());
     }
+
+    @Test
+    public void getPlayerCount() {
+        assertEquals(0, treasureRoom.getPlayerCount());
+    }
 }
