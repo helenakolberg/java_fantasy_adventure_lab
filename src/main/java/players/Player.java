@@ -30,4 +30,8 @@ public abstract class Player {
         int index = this.treasures.indexOf(treasure);
         return this.treasures.remove(index);
     }
+
+    public void addHealth(int health) {
+        this.health += health;
+    }
 }

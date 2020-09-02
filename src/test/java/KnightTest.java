@@ -62,4 +62,10 @@ public class KnightTest {
         assertEquals(0, knight.getTreasureCount());
     }
 
+    @Test
+    public void canAddHealth() {
+        knight.addHealth(10);
+        assertEquals(110, knight.getHealth());
+    }
+
 }
